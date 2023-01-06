@@ -26,6 +26,7 @@ public class Student {
         this.name = s.getName();
     }
 
+    
     public String getName(){
         return name;
     }
