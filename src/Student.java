@@ -8,7 +8,7 @@ public class Student {
     }
 
     Student(int id, String name, int age){
-        this(id, name); // calls the default constructor above one
+        this(id, name); // calls the class 
         System.out.println(id + " " + name + " "+ age);
     }
 }
