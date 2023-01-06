@@ -1,40 +1,34 @@
 public class Student {
-
-    /*
-    * id, string stores in heap and class instances which are stored in stack will point to them
-    * static variable or class variable will store in class area which is neither heap nor stack
-    * and this static variable just store there once and all instances point to it, unlike non static variables which
-    * are created every time when instance is created*/
-
     int id;
-    private String name;
-    static String college = "College";
+    String name;
 
     Student(){
-        this.id = 0;
-        this.name = "";
+        this.id=0;
+        this.name="";
     }
 
     Student(int id, String name){
-        // this refers to class instance
+        // refers to the current class instance
         this.id = id;
         this.name = name;
     }
 
-    Student(Student s){
-        this.id = s.id;
-        this.name = s.getName();
+    Student(int id, String name, int age){
+        this(id, name); // calls the class constructor, reusing constructor
+        System.out.println(id + " " + name + " "+ age);
     }
 
-    public String getName(){
-        return name;
+    void object(){
+        System.out.println(this);
     }
 
-    public void setName(String name){
-        this.name = name;
+    void describe(){
+        System.out.println("i am student");
     }
+}
 
-    void display(){
-        System.out.println(id + " "+ name+ " "+ college);
+class Fresher extends Student {
+    void belongTo(){
+        System.out.println(" he is fresher");
     }
 }
